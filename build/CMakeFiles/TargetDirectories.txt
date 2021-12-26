@@ -1,4 +1,0 @@
-/Users/kwonbosung/program/UDP-communication/build/CMakeFiles/udp-server.dir
-/Users/kwonbosung/program/UDP-communication/build/CMakeFiles/udp-client.dir
-/Users/kwonbosung/program/UDP-communication/build/CMakeFiles/edit_cache.dir
-/Users/kwonbosung/program/UDP-communication/build/CMakeFiles/rebuild_cache.dir

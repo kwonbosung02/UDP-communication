@@ -16,7 +16,7 @@ int main(void){
 
         serveraddr.sin_family = AF_INET;
         serveraddr.sin_port = htons(5000);
-        serveraddr.sin_addr.s_addr = inet_addr("172.20.40.76");
+        serveraddr.sin_addr.s_addr = inet_addr("110.76.72.82");
 
         sockaddr_in peeraddr;
         int addrlen;
