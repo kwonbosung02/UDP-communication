@@ -26,7 +26,6 @@ int main(void){
         while(1){
             cout << endl << "[send data]";
             if(fgets(buf, BUFSIZE + 1, stdin) == NULL)
-                break;
             
             len = strlen(buf);
             if(buf[len-1] == '\n')
