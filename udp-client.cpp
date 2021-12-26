@@ -7,6 +7,7 @@
 using namespace std;
 
 #define BUFSIZE 512
+#define PORT 8080
 
 int main(void){
         int sock = socket(AF_INET, SOCK_DGRAM, 0);
@@ -15,10 +16,9 @@ int main(void){
         memset(&serveraddr, 0, sizeof(serveraddr));
 
         serveraddr.sin_family = AF_INET;
-        serveraddr.sin_port = htons(5000);
-        serveraddr.sin_addr.s_addr = inet_addr("110.76.72.82");
+        serveraddr.sin_port = htons(PORT);
+        serveraddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
-        sockaddr_in peeraddr;
         int addrlen;
         char buf[BUFSIZE + 1];
         int len;
