@@ -7,7 +7,7 @@
 using namespace std;
 
 #define BUFSIZE 512
-#define PORT 8080
+#define PORT 8000
 
 int main(void){
         int sock = socket(AF_INET, SOCK_DGRAM, 0);
