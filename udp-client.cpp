@@ -7,7 +7,7 @@
 using namespace std;
 
 #define BUFSIZE 512
-#define PORT 8000
+#define PORT 8001
 
 int main(void){
         int sock = socket(AF_INET, SOCK_DGRAM, 0);
@@ -17,7 +17,7 @@ int main(void){
 
         serveraddr.sin_family = AF_INET;
         serveraddr.sin_port = htons(PORT);
-        serveraddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+        serveraddr.sin_addr.s_addr = inet_addr("192.168.48.128");
 
         int addrlen;
         char buf[BUFSIZE + 1];
@@ -26,7 +26,7 @@ int main(void){
         while(1){
             cout << endl << "[send data]";
             if(fgets(buf, BUFSIZE + 1, stdin) == NULL)
-            
+                break;
             len = strlen(buf);
             if(buf[len-1] == '\n')
                 buf[len-1] = '\0';

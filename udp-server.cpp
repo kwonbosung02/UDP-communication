@@ -6,7 +6,7 @@
 #include<iostream>
 
 #define BUFSIZE 512
-#define PORT 8080
+#define PORT 8002
 
 using namespace std;
 
@@ -23,8 +23,9 @@ int main(){
     serveraddr.sin_family = AF_INET;
     serveraddr.sin_port = htons(PORT);
     serveraddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    
 
+    int option = 1;
+    setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &option, sizeof(option));
     retval = bind(sock,(sockaddr*)&serveraddr, sizeof(serveraddr));
     if(-1 == retval){
         printf("ERROR");
