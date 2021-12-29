@@ -8,3 +8,4 @@ project(
 
 add_executable (udp-server udp-server.cpp)
 add_executable (udp-client udp-client.cpp)
+add_executable (test test.cpp)

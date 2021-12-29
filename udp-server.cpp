@@ -4,9 +4,10 @@
 #include<sys/socket.h>
 #include<arpa/inet.h>
 #include<iostream>
+#include<chrono>
 
 #define BUFSIZE 512
-#define PORT 8002
+#define PORT 8001
 
 using namespace std;
 
@@ -39,10 +40,14 @@ int main(){
     {
         addrlen = sizeof(clientaddr);
         retval = recvfrom(sock, buf, BUFSIZE, 0, (sockaddr*)&clientaddr,(socklen_t*)&addrlen);
-        buf[retval] = '\0';
+        auto nanosec_since_epoch_e = chrono::duration_cast<chrono::nanoseconds>(chrono::system_clock::now().time_since_epoch()).count();
 
+        buf[retval] = '\0';
+        
         cout << "[UDP/" << inet_ntoa(clientaddr.sin_addr) << ":" << ntohs(clientaddr.sin_port) << "]" << buf <<endl;
         
+        cout << "[Delay : " << nanosec_since_epoch_e << "\n" << endl;
 
     }
 }
+
