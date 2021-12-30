@@ -24,7 +24,7 @@ int main(void){
         int len;
         int cnt = 0;
         while(1){
-            cout << endl << "[send data]";
+            cout << endl << "[send data]" << endl;
 
             /*if(fgets(buf, BUFSIZE + 1, stdin) == NULL)
                 break;*/

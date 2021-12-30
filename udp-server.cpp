@@ -44,10 +44,10 @@ int main(){
 
         buf[retval] = '\0';
         
-        cout << "[UDP/" << inet_ntoa(clientaddr.sin_addr) << ":" << ntohs(clientaddr.sin_port) << "]" << buf <<endl;
+        cout << "[UDP/" << inet_ntoa(clientaddr.sin_addr) << ":" << ntohs(clientaddr.sin_port) << "]" <<endl;
+        cout << "Data: "<< buf << endl;
+        cout << "Delay: " << nanosec_since_epoch_e << "\n" << endl;
         
-        cout << "[Delay : " << nanosec_since_epoch_e << "\n" << endl;
-
     }
 }
 
