@@ -7,7 +7,7 @@
 #include<chrono>
 
 #define BUFSIZE 512
-#define PORT 8001
+#define PORT 8002
 
 using namespace std;
 
@@ -35,18 +35,19 @@ int main(){
     sockaddr_in clientaddr;
     int addrlen;
     char buf[BUFSIZE+1];
-
+    int cnt = 0;
     while(1)
     {
         addrlen = sizeof(clientaddr);
         retval = recvfrom(sock, buf, BUFSIZE, 0, (sockaddr*)&clientaddr,(socklen_t*)&addrlen);
-        auto nanosec_since_epoch_e = chrono::duration_cast<chrono::nanoseconds>(chrono::system_clock::now().time_since_epoch()).count();
+        //auto nanosec_since_epoch_e = chrono::duration_cast<chrono::nanoseconds>(chrono::system_clock::now().time_since_epoch()).count();
 
-        buf[retval] = '\0';
+        //buf[retval] = '\0';
         
         cout << "[UDP/" << inet_ntoa(clientaddr.sin_addr) << ":" << ntohs(clientaddr.sin_port) << "]" <<endl;
-        cout << "Data: "<< buf << endl;
-        cout << "Delay: " << nanosec_since_epoch_e << "\n" << endl;
+        cout << "Data["<< cnt << "]" << buf << endl;
+        cnt++;
+        //cout << "Delay: " << nanosec_since_epoch_e << "\n" << endl;
         
     }
 }
